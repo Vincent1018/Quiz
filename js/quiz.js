@@ -15,8 +15,13 @@ Quiz.prototype.hasEnded = function() {
 }
 Quiz.prototype.guess = function(userGuess) {
     const CurrentQuestion = this.questions[this.currentIndex];
-    if (currentQuestions.isCorrect(userGuess)) {
+    if (CurrentQuestion.isCorrect(userGuess)) {
         this.score++;
     }
     this.nextIndex();
+}
+
+Quiz.prototype.reset = function() {
+    this.currentIndex = 0;
+    this.score = 0;
 }
